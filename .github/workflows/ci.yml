@@ -63,7 +63,8 @@ jobs:
         run: make typecheck
 
       - name: Test
-        run: make test
+        # -n auto counts physical cores: 2 workers on these 4-vCPU runners
+        run: make test PYTEST_JOBS=logical
 
   live-tests:
     name: "Live tests (real credentials)"
