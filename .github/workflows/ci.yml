@@ -4,6 +4,7 @@ name: CI
 # build on main would re-test content that the release / feature PR already
 # proved green.
 on:
+  workflow_dispatch:
   pull_request:
 
 concurrency:
